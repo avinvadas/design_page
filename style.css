@@ -595,7 +595,7 @@ border-bottom: 1px solid var(--dark03);
 
 #hero_background{
   --bg-color: #ffffff;
-  --border-color: #cccccc;
+  --border-color: #eeeeee;
   --square-size: 30vmin;
   --margin-horz: calc(50vw - (var(--square-size) *0.5));
   --margin-vert: calc(50vh - (var(--square-size) *0.5));
