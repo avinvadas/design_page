@@ -595,7 +595,7 @@ border-bottom: 1px solid var(--dark03);
 
 #hero_background{
   --bg-color: #ffffff;
-  --border-color: #eeeeee;
+  --border-color: #dddddd;
   --square-size: 30vmin;
   --margin-horz: calc(50vw - (var(--square-size) *0.5));
   --margin-vert: calc(50vh - (var(--square-size) *0.5));
@@ -609,7 +609,9 @@ border-bottom: 1px solid var(--dark03);
   background-size:cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  opacity:0.3;
   background-image:
+
 linear-gradient(0deg, var(--border-color) 1px, transparent 2px),
 linear-gradient(90deg, var(--border-color) 1px, transparent 2px),
 linear-gradient(180deg, var(--border-color) 1px, transparent 2px),
@@ -666,6 +668,7 @@ linear-gradient(270deg, var(--border-color) 1px, transparent 2px),
   -webkit-text-stroke: 1px var(--dark01);
   line-height: 0.8;
   margin:0;
+  transform:translateX(-3.5vw) scale(0.85);
 
 
 
@@ -897,6 +900,7 @@ font-size:24px;
 
     width: fit-content;
     margin-left: 1rem;
+    align-self:center;
   }
 .nav{
   border-width:2px;
