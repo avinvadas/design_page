@@ -142,7 +142,7 @@ var scene_proj03_image = new ScrollMagic.Scene({
   triggerElement: "#project03_image"
 }).setClassToggle("#project03_image", "project_li__image--reveal").triggerHook("onEnter").addTo(controller);
 var scene_button_email = new ScrollMagic.Scene({
-  triggerElement: "#hero__button_email",
+  triggerElement: "#hero__contact",
   reverse: true
 }).setClassToggle("#nav__button_meeting", "nav_icon--revealed").triggerHook("onLeave").addTo(controller);
 /*#nav__button_email*/
@@ -206,139 +206,6 @@ var scene_heading_enter = new ScrollMagic.Scene({
   .addTo(controller)
   .setTween(tl_hero_in);
 */
-//p5.js start---->
-// center point
-
-var centerX = 0.0,
-    centerY = 0.0;
-var radius = 0.5 * Math.min(window.innerWidth, window.innerHeight);
-rotAngle = -30;
-var accelX = 0.0,
-    accelY = 0.0;
-var deltaX = 0.0,
-    deltaY = 0.0;
-var springing = 0.0006,
-    damping = 0.92; //corner nodes
-
-var nodes = 4; //zero fill arrays
-
-var nodeStartX = [];
-var nodeStartY = [];
-var nodeX = [];
-var nodeY = [];
-var angle = [];
-var frequency = []; // soft-body dynamics
-
-var organicConstant = 1.0;
-
-function setup() {
-  var canvas = createCanvas(windowWidth, windowHeight); //center shape in window
-
-  centerX = width / 2;
-  centerY = height / 2; //initialize arrays to 0
-
-  for (var i = 0; i < nodes; i++) {
-    nodeStartX[i] = 0;
-    nodeStartY[i] = 0;
-    nodeY[i] = 0;
-    nodeY[i] = 0;
-    angle[i] = 0;
-  }
-
-  canvas.id = "canvas";
-  canvas.parent(document.getElementById("hero_bg")); // iniitalize frequencies for corner nodes
-
-  for (var _i = 0; _i < nodes; _i++) {
-    frequency[_i] = random(5, 12);
-  }
-
-  noStroke();
-  frameRate(30);
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  radius = 0.5 * Math.min(window.innerWidth, window.innerHeight); //center shape in window
-
-  centerX = width / 2;
-  centerY = height / 2; //initialize arrays to 0
-
-  for (var i = 0; i < nodes; i++) {
-    nodeStartX[i] = 0;
-    nodeStartY[i] = 0;
-    nodeY[i] = 0;
-    nodeY[i] = 0;
-    angle[i] = 0;
-  } // iniitalize frequencies for corner nodes
-
-
-  for (var _i2 = 0; _i2 < nodes; _i2++) {
-    frequency[_i2] = random(5, 12);
-  }
-
-  noStroke();
-  frameRate(30);
-}
-
-function resizeCanvas(windowWidth, windowHeight) {}
-
-function draw() {
-  background("rgba(0,0,0,0.1)");
-  fill(0, 100);
-  rect(0, 0, width, height);
-  drawShape();
-  moveShape();
-}
-
-function drawShape() {
-  //  calculate node  starting locations
-  for (var i = 0; i < nodes; i++) {
-    nodeStartX[i] = centerX + cos(radians(rotAngle)) * radius;
-    nodeStartY[i] = centerY + sin(radians(rotAngle)) * radius;
-    rotAngle += 360.0 / nodes;
-  } // draw polygon
-
-
-  curveTightness(organicConstant);
-  fill(255);
-  beginShape();
-
-  for (var _i3 = 0; _i3 < nodes; _i3++) {
-    curveVertex(nodeX[_i3], nodeY[_i3]);
-  }
-
-  for (var _i4 = 0; _i4 < nodes - 1; _i4++) {
-    curveVertex(nodeX[_i4], nodeY[_i4]);
-  }
-
-  endShape(CLOSE);
-}
-
-function moveShape() {
-  //move center point
-  deltaX = mouseX - centerX;
-  deltaY = mouseY - centerY; // create springing effect
-
-  deltaX *= springing;
-  deltaY *= springing;
-  accelX += deltaX;
-  accelY += deltaY; // move predator's center
-
-  /*centerX += accelX;
-  centerY += accelY;*/
-  // slow down springing
-
-  accelX *= damping;
-  accelY *= damping; // change curve tightness
-
-  organicConstant = 1 - (abs(accelX) + abs(accelY)) * 0.1; //move nodes
-
-  for (var i = 0; i < nodes; i++) {
-    nodeX[i] = nodeStartX[i] + sin(radians(angle[i])) * (accelX * 2);
-    nodeY[i] = nodeStartY[i] + sin(radians(angle[i])) * (accelY * 2);
-    angle[i] += frequency[i];
-  }
-} //<----p5.js endShape
 },{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -367,7 +234,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49785" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55027" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
