@@ -132,6 +132,9 @@ var scene_heading_testimonials = new ScrollMagic.Scene({
 var scene_heading_testimonials = new ScrollMagic.Scene({
   triggerElement: "#section_heading-testimonials"
 }).setClassToggle("#section_heading-testimonials", "section__heading--reveal").triggerHook("onEnter").addTo(controller);
+var scene_heading_work = new ScrollMagic.Scene({
+  triggerElement: "#section_heading-contact"
+}).setClassToggle("#section_heading-contact", "section__heading--reveal").triggerHook("onEnter").addTo(controller);
 var scene_proj01_image = new ScrollMagic.Scene({
   triggerElement: "#project01_image"
 }).setClassToggle("#project01_image", "project_li__image--reveal").triggerHook("onEnter").addTo(controller);
@@ -234,7 +237,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58174" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
